@@ -22,7 +22,7 @@ public class NavMeshBaker : MonoBehaviour
     {
         foreach (var plane in planeManager.trackables)
         {
-            if (plane.transform.position.y < player.position.y)
+            if (plane.transform.position.y < 0.1)
             {
                 plane.GetComponent<NavMeshSurface>().BuildNavMesh();
                 agent.enabled = true;

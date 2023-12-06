@@ -1,0 +1,11 @@
+﻿title: StartNPC
+tags:
+---
+Hi, could I ask for your help?  #line:Hello 
+Could you watch over my dog for a moment? I need to go somewhere, I will be back very soon.
+-> Sure, what's his name?
+He's called Johnny. You can throw him the yellow ball if you would like to play with him.
+-> I'm scared of dogs.
+Don't worry, he is very friendly and does not bite. Throw him the yellow ball to keep him occupied.
+
+===
