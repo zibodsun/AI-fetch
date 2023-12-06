@@ -7,5 +7,20 @@ Could you watch over my dog for a moment? I need to go somewhere, I will be back
 He's called Johnny. You can throw him the yellow ball if you would like to play with him.
 -> I'm scared of dogs.
 Don't worry, he is very friendly and does not bite. Throw him the yellow ball to keep him occupied.
+[[Dog1]]
+===
 
+title: Dog1
+tags:
+---
+Hey. I'm hungry.
+-> What? You can talk?
+Or maybe you are just going crazy. Either way, go buy me something to eat. [[Dog2]]
+-> Okay, what do you want to eat? [[Dog2]]
+===
+
+title: Dog2
+tags:
+---
+I would like to have...
 ===

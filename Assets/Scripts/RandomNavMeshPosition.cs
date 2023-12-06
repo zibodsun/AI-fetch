@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -35,6 +36,10 @@ public class RandomNavMeshPosition : MonoBehaviour
             GameObject fetchItem = GameObject.FindWithTag("Fetchable");
             if (fetchItem != null ) {
                 agent.SetDestination(fetchItem.transform.position);
+                if ( Vector3.Distance(fetchItem.transform.position, transform.position) <= 0.05 && 
+                    fetchItem.GetComponent<Rigidbody>().velocity.magnitude <= 0.05) {
+                    Destroy(fetchItem);
+                }
             }
         }
         else

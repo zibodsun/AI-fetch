@@ -25,9 +25,13 @@ public class BallBehaviour : MonoBehaviour
             GetComponent<MeshRenderer>().material = defaultMaterial;
         }
         if (transform.position.y < -10) {
-            transform.position = startPosition;
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
-            gameObject.tag = "Untagged";
+            ResetObject();
         }
+    }
+
+    void ResetObject() {
+        transform.position = startPosition;
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        gameObject.tag = "Untagged";
     }
 }
