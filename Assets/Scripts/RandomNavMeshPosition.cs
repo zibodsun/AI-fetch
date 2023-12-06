@@ -7,6 +7,7 @@ using UnityEngine.AI;
 public class RandomNavMeshPosition : MonoBehaviour
 {
     public NavMeshAgent agent;
+    public bool isFetcher;
 
     private Vector3 targetPosition;
 
@@ -28,6 +29,13 @@ public class RandomNavMeshPosition : MonoBehaviour
         if (_waitTimer < _waitTime)
         {
             _waitTimer += Time.deltaTime;
+        }
+        else if (isFetcher) 
+        {
+            GameObject fetchItem = GameObject.FindWithTag("Fetchable");
+            if (fetchItem != null ) {
+                agent.SetDestination(fetchItem.transform.position);
+            }
         }
         else
         {

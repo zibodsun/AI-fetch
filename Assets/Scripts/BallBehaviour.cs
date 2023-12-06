@@ -5,6 +5,8 @@ using UnityEngine;
 public class BallBehaviour : MonoBehaviour
 {
     Vector3 startPosition;
+    public Material defaultMaterial;
+    public Material fetchableMaterial;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +17,13 @@ public class BallBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameObject.tag == "Fetchable")
+        {
+            GetComponent<MeshRenderer>().material = fetchableMaterial;
+        }
+        else {
+            GetComponent<MeshRenderer>().material = defaultMaterial;
+        }
         if (transform.position.y < -10) {
             transform.position = startPosition;
             GetComponent<Rigidbody>().velocity = Vector3.zero;
