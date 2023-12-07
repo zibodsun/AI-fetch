@@ -13,6 +13,8 @@ public class RandomNavMeshPosition : MonoBehaviour
     public bool isFetcher;
     public Collider dogCollider;
     public Transform playerTransform;
+    public bool happy;
+    private int patienceCounter;
 
     private Vector3 targetPosition;
 
@@ -23,6 +25,7 @@ public class RandomNavMeshPosition : MonoBehaviour
     void Start()
     {
         _waitTime = 5f;
+        patienceCounter = 0;
     }
 
     // Update is called once per frame
@@ -45,6 +48,9 @@ public class RandomNavMeshPosition : MonoBehaviour
                 if (Vector3.Distance(fetchItem.transform.position, transform.position) <= 0.05 &&
                     fetchItem.GetComponent<Rigidbody>().velocity.magnitude <= 0.05)
                 {
+                    if (fetchItem.GetComponent<BallBehaviour>().tasty) { 
+                        happy = true;
+                    }
 
                     Destroy(fetchItem);
                     dogCollider.enabled = true;

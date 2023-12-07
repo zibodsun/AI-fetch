@@ -15,15 +15,18 @@ public class YarnCommandHolder : MonoBehaviour
         
     }
 
-    void BuyApple() { 
+    [YarnCommand("Buy_Apple")] 
+    public void BuyApple() { 
         apple.SetActive(true);
     }
 
-    void BuyBone() { 
+    [YarnCommand("Buy_Bone")]
+    public void BuyBone() { 
         bone.SetActive(true);
     }
 
-    void BuyEggplant() { 
+    [YarnCommand("Buy_Eggplant")]
+    public void BuyEggplant() { 
         eggplant.SetActive(true);
     }
 }

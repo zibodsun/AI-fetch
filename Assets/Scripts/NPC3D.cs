@@ -84,7 +84,7 @@ public class NPC3D : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //if other is player
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("MainCamera"))
         {
             if (!string.IsNullOrEmpty(talkToNode))
             {
@@ -108,7 +108,7 @@ public class NPC3D : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("MainCamera"))
         {
             canvasActive = false;
         }

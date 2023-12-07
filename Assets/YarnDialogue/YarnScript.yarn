@@ -1,6 +1,6 @@
 title: StartNPC
 tags:
-position: -145,-150
+position: -184,-242
 ---
 
 <<Set_Audio_To_NPC_One LipSyncHolder>>
@@ -29,7 +29,7 @@ Hey. Don't bother looking for that ball. I just ate it. I'm hungry.
 
 title: Dog2
 tags:
-position: 120,65
+position: -154,101
 ---
 I would like to have a bone. Yes, buy me a bone.
 
@@ -37,9 +37,13 @@ I would like to have a bone. Yes, buy me a bone.
 
 title: Shop1
 tags:
+position: -189,-55
 ---
 Hi, would you like to purchase something?
 -> I think I'll have an apple.
+    <<Buy_Apple YarnCommands>>
 -> Give me an eggplant!
+    <<Buy_Eggplant YarnCommands>>
 -> Could I have a bone, please?
+    <<Buy_Bone YarnCommands>>
 ===

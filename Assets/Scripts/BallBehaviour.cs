@@ -7,6 +7,7 @@ public class BallBehaviour : MonoBehaviour
     Vector3 startPosition;
     public Material defaultMaterial;
     public Material fetchableMaterial;
+    public bool tasty;
 
     // Start is called before the first frame update
     void Start()
