@@ -2,15 +2,38 @@ title: StartNPC
 tags:
 position: -184,-242
 ---
-
+<<declare $knowsNameOfDog = false>>
+<<declare $happy = false>>
+<<declare $sad = false>>
 <<Set_Audio_To_NPC_One LipSyncHolder>>
+
+<<if $happy == true>>
+    <<if $knowsNameOfDog == true>>
+        Hi, I'm back. 
+        Oh, I see Johnny looks very happy. Thank you so much for being nice to him.
+        <<DogRunFree YarnCommands>>
+    <<else>>
+        Hi, I'm back. 
+        Oh, I see he looks very happy. By the way, his name is Johnny. Thank you so much for being nice to him.
+        <<DogRunFree YarnCommands>>
+    <<endif>>
+<<elseif $sad == true>>
+    Hi, I'm back. 
+    My dog looks a little bit upset. Sorry if he was bothering you.
+    Anyways, thanks for taking care of him.
+    <<DogRunFree YarnCommands>>
+<<else>>
 Hi, could I ask for your help?  #line:Hello 
 Could you watch over my dog for a moment? I need to go somewhere, I will be back very soon.
 -> Sure, what's his name?
+    <<set $knowsNameOfDog = true>>
     He's called Johnny. You can throw him the yellow ball if you would like to play with him.
+    <<PhoneCallTime YarnCommands>>
 -> I'm scared of dogs.
     Don't worry, he is very friendly and does not bite. Throw him the yellow ball to keep him occupied.
+    <<PhoneCallTime YarnCommands>>
 
+<<endif>>
 ===
 
 title: Dog1

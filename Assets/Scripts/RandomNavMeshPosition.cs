@@ -15,6 +15,7 @@ public class RandomNavMeshPosition : MonoBehaviour
     public Transform playerTransform;
     public bool happy;
     private int patienceCounter;
+    public OwnerBehaviour owner;
 
     private Vector3 targetPosition;
 
@@ -25,7 +26,7 @@ public class RandomNavMeshPosition : MonoBehaviour
     void Start()
     {
         _waitTime = 5f;
-        patienceCounter = 0;
+        patienceCounter = 3;
     }
 
     // Update is called once per frame
@@ -33,6 +34,19 @@ public class RandomNavMeshPosition : MonoBehaviour
     {
         if (agent.enabled == false)
             return;
+
+        // owner comes back
+        if (patienceCounter == 0) {
+            owner.PhoneCallDone();
+            if (happy)
+            {
+                yarnInMemoryStorage.SetValue("$happy", true);
+            }
+            else {
+                yarnInMemoryStorage.SetValue("$sad", true);
+            }
+
+        }
 
         if (_waitTimer < _waitTime)
         {
@@ -50,11 +64,13 @@ public class RandomNavMeshPosition : MonoBehaviour
                 {
                     if (fetchItem.GetComponent<BallBehaviour>().tasty) { 
                         happy = true;
+                        patienceCounter = 0;
                     }
 
                     Destroy(fetchItem);
                     dogCollider.enabled = true;
                     agent.speed = 0.0f;
+                    patienceCounter--;
                 }
 
             }

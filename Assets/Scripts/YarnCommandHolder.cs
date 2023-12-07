@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using Yarn.Unity;
 
 public class YarnCommandHolder : MonoBehaviour
 {
+    public RandomNavMeshPosition dog;
+    public OwnerBehaviour owner;
     public GameObject apple;
     public GameObject bone;
     public GameObject eggplant;
@@ -28,5 +31,15 @@ public class YarnCommandHolder : MonoBehaviour
     [YarnCommand("Buy_Eggplant")]
     public void BuyEggplant() { 
         eggplant.SetActive(true);
+    }
+
+    [YarnCommand("DogRunFree")]
+    public void DogRunFree() { 
+        dog.isFetcher = false;
+    }
+
+    [YarnCommand("PhoneCallTime")]
+    public void PhoneCallTime() {
+        owner.PhoneCallTime();
     }
 }
