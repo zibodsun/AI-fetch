@@ -22,6 +22,8 @@ public class RandomNavMeshPosition : MonoBehaviour
     private float _waitTime;
     private float _waitTimer;
     public float wanderDistance;
+
+    public MeshRenderer DebugObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,11 +34,9 @@ public class RandomNavMeshPosition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (agent.enabled == false)
-            return;
-
         // owner comes back
         if (patienceCounter == 0) {
+            //DebugObject.enabled = false;
             owner.PhoneCallDone();
             if (happy)
             {
@@ -62,14 +62,17 @@ public class RandomNavMeshPosition : MonoBehaviour
                 if (Vector3.Distance(fetchItem.transform.position, transform.position) <= 0.1 &&
                     fetchItem.GetComponent<Rigidbody>().velocity.magnitude <= 0.1)
                 {
-                    if (fetchItem.GetComponent<BallBehaviour>().tasty) { 
+                    if (fetchItem.GetComponent<BallBehaviour>().tasty)
+                    {
                         happy = true;
                         patienceCounter = 0;
+                        //DebugObject.enabled = false;
                     }
-
+                    else {
+                        patienceCounter--;
+                    }
+                    dogCollider.enabled = true;                    
                     Destroy(fetchItem);
-                    dogCollider.enabled = true;
-                    patienceCounter--;
                 }
 
             }

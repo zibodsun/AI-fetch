@@ -11,7 +11,7 @@ public class OwnerBehaviour : MonoBehaviour
     private Vector3 startPosition;
     public NavMeshAgent agent;
 
-    bool onPhone;
+    public bool onPhone;
     // Start is called before the first frame update
     void Start()
     {
