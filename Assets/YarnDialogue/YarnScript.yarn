@@ -40,7 +40,7 @@ title: Dog1
 tags:
 position: 160,-180
 ---
-
+<<StopDogMovement YarnCommands>>
 Hey. Don't bother looking for that ball. I just ate it. I'm hungry.
 -> What? You can talk?
     Or maybe you are just going crazy. Either way, go buy me something to eat.
@@ -55,7 +55,8 @@ tags:
 position: -154,101
 ---
 I would like to have a bone. Yes, buy me a bone.
-
+<<ResumeDogMovement YarnCommands>>
+<<ShopEnable YarnCommands>>
 ===
 
 title: Shop1

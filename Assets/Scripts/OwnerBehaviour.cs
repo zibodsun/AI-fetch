@@ -10,20 +10,36 @@ public class OwnerBehaviour : MonoBehaviour
 
     private Vector3 startPosition;
     public NavMeshAgent agent;
+
+    bool onPhone;
     // Start is called before the first frame update
     void Start()
     {
         startPosition = transform.position;
-        PhoneCallTime();
+        
         //agent = GetComponent<NavMeshAgent>();
     }
-
+    private void Update()
+    {
+        if (onPhone)
+        {
+            agent.SetDestination(phoneCallPlace.position);
+        }
+        else {
+            agent.SetDestination(startPosition);
+        }
+        //
+    }
     public void PhoneCallTime() {
-        agent.SetDestination(phoneCallPlace.position);
+        onPhone = true;
+        GetComponent<BoxCollider>().enabled = false;
     }
 
     public void PhoneCallDone()
     {
-        agent.SetDestination(startPosition);
+        onPhone = false;
+        GetComponent<BoxCollider>().enabled = true;
     }
+
+
 }

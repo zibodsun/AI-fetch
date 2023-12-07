@@ -866,7 +866,7 @@ Transform:
   m_GameObject: {fileID: 144198953}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.19, y: 0, z: -0.4100002}
+  m_LocalPosition: {x: 2.19, y: 0, z: -1.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1165,7 +1165,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dog: {fileID: 1245195604}
-  owner: {fileID: 0}
+  owner: {fileID: 45608447}
+  shopCollider: {fileID: 1366779764}
   apple: {fileID: 1295791723}
   bone: {fileID: 1816350482}
   eggplant: {fileID: 1533383674}
@@ -3187,7 +3188,7 @@ MonoBehaviour:
   dogCollider: {fileID: 1245195608}
   playerTransform: {fileID: 248358149}
   happy: 0
-  owner: {fileID: 0}
+  owner: {fileID: 45608447}
   wanderDistance: 15
 --- !u!195 &1245195605
 NavMeshAgent:
@@ -4560,7 +4561,7 @@ Transform:
   m_GameObject: {fileID: 1366779762}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.459, y: 0, z: -0.83}
+  m_LocalPosition: {x: 1.459, y: 0, z: -1.7199998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4584,7 +4585,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1.65, y: 2, z: 0.73}
   m_Center: {x: 0, y: 1, z: -1.31}
@@ -5282,7 +5283,7 @@ Transform:
   m_GameObject: {fileID: 1721379054}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.31, y: 0, z: -0.4}
+  m_LocalPosition: {x: 2.227, y: 0, z: -1.257}
   m_LocalScale: {x: 0.12496, y: 0.12496, z: 0.12496}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6569,7 +6570,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 0.6
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -6588,7 +6589,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148074917725}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd100ae3a0fd7bf42ae976afaab1bcb3, type: 3}
   m_Name: 
@@ -6600,7 +6601,7 @@ MonoBehaviour:
   playerTransform: {fileID: 248358149}
   happy: 0
   owner: {fileID: 0}
-  wanderDistance: 0
+  wanderDistance: 30
 --- !u!4 &926215473301869168
 Transform:
   m_ObjectHideFlags: 0

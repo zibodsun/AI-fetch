@@ -8,6 +8,7 @@ public class YarnCommandHolder : MonoBehaviour
 {
     public RandomNavMeshPosition dog;
     public OwnerBehaviour owner;
+    public Collider shopCollider;
     public GameObject apple;
     public GameObject bone;
     public GameObject eggplant;
@@ -39,7 +40,23 @@ public class YarnCommandHolder : MonoBehaviour
     }
 
     [YarnCommand("PhoneCallTime")]
-    public void PhoneCallTime() {
+    public void PhoneCall() {
         owner.PhoneCallTime();
+    }
+
+    [YarnCommand("StopDogMovement")]
+    public void StopDogMovement() { 
+        dog.agent.speed = 0.0f;
+    }
+
+    [YarnCommand("ResumeDogMovement")]
+    public void ResumeDogMovement()
+    {
+        dog.agent.speed = 2;
+    }
+
+    [YarnCommand("ShopEnable")]
+    public void ShopEnable(){ 
+        shopCollider.enabled = true;
     }
 }

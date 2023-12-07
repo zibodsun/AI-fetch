@@ -59,8 +59,8 @@ public class RandomNavMeshPosition : MonoBehaviour
             {
                 agent.SetDestination(fetchItem.transform.position);
 
-                if (Vector3.Distance(fetchItem.transform.position, transform.position) <= 0.05 &&
-                    fetchItem.GetComponent<Rigidbody>().velocity.magnitude <= 0.05)
+                if (Vector3.Distance(fetchItem.transform.position, transform.position) <= 0.1 &&
+                    fetchItem.GetComponent<Rigidbody>().velocity.magnitude <= 0.1)
                 {
                     if (fetchItem.GetComponent<BallBehaviour>().tasty) { 
                         happy = true;
@@ -69,7 +69,6 @@ public class RandomNavMeshPosition : MonoBehaviour
 
                     Destroy(fetchItem);
                     dogCollider.enabled = true;
-                    agent.speed = 0.0f;
                     patienceCounter--;
                 }
 
