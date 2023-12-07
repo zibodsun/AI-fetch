@@ -1,26 +1,45 @@
-﻿title: StartNPC
+title: StartNPC
 tags:
+position: -145,-150
 ---
+
+<<Set_Audio_To_NPC_One LipSyncHolder>>
 Hi, could I ask for your help?  #line:Hello 
 Could you watch over my dog for a moment? I need to go somewhere, I will be back very soon.
 -> Sure, what's his name?
-He's called Johnny. You can throw him the yellow ball if you would like to play with him.
+    He's called Johnny. You can throw him the yellow ball if you would like to play with him.
 -> I'm scared of dogs.
-Don't worry, he is very friendly and does not bite. Throw him the yellow ball to keep him occupied.
-[[Dog1]]
+    Don't worry, he is very friendly and does not bite. Throw him the yellow ball to keep him occupied.
+
 ===
 
 title: Dog1
 tags:
+position: 160,-180
 ---
-Hey. I'm hungry.
+
+Hey. Don't bother looking for that ball. I just ate it. I'm hungry.
 -> What? You can talk?
-Or maybe you are just going crazy. Either way, go buy me something to eat. [[Dog2]]
--> Okay, what do you want to eat? [[Dog2]]
+    Or maybe you are just going crazy. Either way, go buy me something to eat.
+-> Okay, what do you want to eat? 
+
+<<jump Dog2>>
+
 ===
 
 title: Dog2
 tags:
+position: 120,65
 ---
-I would like to have...
+I would like to have a bone. Yes, buy me a bone.
+
+===
+
+title: Shop1
+tags:
+---
+Hi, would you like to purchase something?
+-> I think I'll have an apple.
+-> Give me an eggplant!
+-> Could I have a bone, please?
 ===

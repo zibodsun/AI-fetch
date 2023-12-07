@@ -4,11 +4,15 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using Yarn.Unity;
 
 public class RandomNavMeshPosition : MonoBehaviour
 {
+    public InMemoryVariableStorage yarnInMemoryStorage;
     public NavMeshAgent agent;
     public bool isFetcher;
+    public Collider dogCollider;
+    public Transform playerTransform;
 
     private Vector3 targetPosition;
 
@@ -34,13 +38,23 @@ public class RandomNavMeshPosition : MonoBehaviour
         else if (isFetcher) 
         {
             GameObject fetchItem = GameObject.FindWithTag("Fetchable");
-            if (fetchItem != null ) {
+            if (fetchItem != null)
+            {
                 agent.SetDestination(fetchItem.transform.position);
-                if ( Vector3.Distance(fetchItem.transform.position, transform.position) <= 0.05 && 
-                    fetchItem.GetComponent<Rigidbody>().velocity.magnitude <= 0.05) {
+
+                if (Vector3.Distance(fetchItem.transform.position, transform.position) <= 0.05 &&
+                    fetchItem.GetComponent<Rigidbody>().velocity.magnitude <= 0.05)
+                {
+
                     Destroy(fetchItem);
+                    dogCollider.enabled = true;
+                    agent.speed = 0.0f;
                 }
+
             }
+            // else {
+            //    agent.SetDestination(playerTransform.position + new Vector3(0.5f, 0, 0.5f));
+            // }
         }
         else
         {
