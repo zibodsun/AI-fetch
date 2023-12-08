@@ -54,6 +54,7 @@ title: Dog2
 tags:
 position: -154,101
 ---
+
 I would like to have a bone. Yes, buy me a bone. #line:03acedd 
 <<ResumeDogMovement YarnCommands>>
 <<ShopEnable YarnCommands>>
@@ -63,7 +64,8 @@ title: Shop1
 tags:
 position: -189,-55
 ---
-Hi, would you like to purchase something? #line:0e84c1f 
+<<Set_Audio_To_NPC_Two LipSyncHolder>>
+Hi, would you like to purchase something? #line:ShopIntroduction
 -> I think I'll have an apple. #line:0bf6917 
     <<Buy_Apple YarnCommands>>
 -> Give me an eggplant! #line:0d290cc 

@@ -7,7 +7,7 @@ public class YarnAudioSourceLipSyncControl : MonoBehaviour
 {
     public VoiceOverView voiceOverView;
 
-    public AudioSource NPCOneAS; //, NPCTwoAS;
+    public AudioSource NPCOneAS, NPCTwoAS, NPCThreeAS;
 
     public void Start()
     {
@@ -21,13 +21,22 @@ public class YarnAudioSourceLipSyncControl : MonoBehaviour
         voiceOverView.audioSource = NPCOneAS;
         Debug.Log("Switching to NPC 1 Audio Source");
     }
-    /*
+    
     [YarnCommand("Set_Audio_To_NPC_Two")]
     public void SetAudioSourceToNPCTwo()
     {
         voiceOverView.audioSource = NPCTwoAS;
         Debug.Log("Switching to NPC 2 Audio Source");
 
-    }*/
+    }
+
+
+    [YarnCommand("Set_Audio_To_NPC_Three")]
+    public void SetAudioSourceToNPCThree()
+    {
+        voiceOverView.audioSource = NPCThreeAS;
+        Debug.Log("Switching to NPC 3 Audio Source");
+
+    }
 
 }
