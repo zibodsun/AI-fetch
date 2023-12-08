@@ -1,6 +1,6 @@
 ﻿title: StartNPC
 tags:
-position: -184,-242
+position: -150,-342
 ---
 <<declare $knowsNameOfDog = false>>
 <<declare $happy = false>>
@@ -38,7 +38,7 @@ Could you watch over my dog for a moment? I need to go make an important call, I
 
 title: Dog1
 tags:
-position: 160,-180
+position: 139,-286
 ---
 
 <<Set_Audio_To_NPC_Three LipSyncHolder>>
@@ -55,7 +55,7 @@ Hey. Don't bother looking for that ball. I just ate it. I'm hungry. #line:DogHey
 
 title: Dog2
 tags:
-position: -154,101
+position: 137,-59
 ---
 <<Set_Audio_To_NPC_Three LipSyncHolder>>
 I would like to have a bone. Yes, buy me a bone. #line:DogRequest
@@ -65,7 +65,7 @@ I would like to have a bone. Yes, buy me a bone. #line:DogRequest
 
 title: Shop1
 tags:
-position: -189,-55
+position: -141,-129
 ---
 <<Set_Audio_To_NPC_Two LipSyncHolder>>
 Hi, would you like to purchase something? #line:ShopIntroduction
