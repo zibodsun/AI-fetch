@@ -20,7 +20,7 @@ public class NPC3D : MonoBehaviour
     public Vector3 PostionSpeachBubble = new Vector3(0f, 2.0f, 0.0f);
     private float canvasTurnSpeed = 2;
     private bool canvasActive;
-    private GameObject playerGameObject;
+    public GameObject playerGameObject;
 
 
     /// </summary>
@@ -29,7 +29,7 @@ public class NPC3D : MonoBehaviour
     {
         dialogueCanvas = GameObject.FindGameObjectWithTag("Dialogue Canvas"); 
         dialogueRunner = FindObjectOfType<DialogueRunner>();
-        playerGameObject = GameObject.FindGameObjectWithTag("Player");
+        playerGameObject = GameObject.FindGameObjectWithTag("MainCamera");
 
 
         if (scriptToLoad == null)

@@ -40,7 +40,10 @@ title: Dog1
 tags:
 position: 160,-180
 ---
+
+<<Set_Audio_To_NPC_Three LipSyncHolder>>
 <<StopDogMovement YarnCommands>>
+
 Hey. Don't bother looking for that ball. I just ate it. I'm hungry. #line:DogHey
 -> What? You can talk? #line:05e3d90 
     Or maybe you are just going crazy. Either way, go buy me something to eat. #line:DogReply
@@ -54,7 +57,7 @@ title: Dog2
 tags:
 position: -154,101
 ---
-
+<<Set_Audio_To_NPC_Three LipSyncHolder>>
 I would like to have a bone. Yes, buy me a bone. #line:DogRequest
 <<ResumeDogMovement YarnCommands>>
 <<ShopEnable YarnCommands>>
