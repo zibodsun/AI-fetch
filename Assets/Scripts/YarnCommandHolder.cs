@@ -59,4 +59,10 @@ public class YarnCommandHolder : MonoBehaviour
     public void ShopEnable(){ 
         shopCollider.enabled = true;
     }
+
+    [YarnCommand("ShopDisable")]
+    public void ShopDisable()
+    {
+        shopCollider.enabled = false;
+    }
 }

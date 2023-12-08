@@ -6,33 +6,33 @@ position: -184,-242
 <<declare $happy = false>>
 <<declare $sad = false>>
 <<Set_Audio_To_NPC_One LipSyncHolder>>
-
+<<ShopDisable YarnCommands>>
 <<if $happy == true>>
+    Hi, I'm back.  #line:OwnerBack
     <<if $knowsNameOfDog == true>>
-        Hi, I'm back.  #line:05170f3 
-        Oh, I see Johnny looks very happy. Thank you so much for being nice to him. #line:0955576 
+        Oh, I see Johnny looks very happy. Thank you so much for being nice to him. #line:OwnerGrateful 
         <<DogRunFree YarnCommands>>
+        <<ShopEnable YarnCommands>>
     <<else>>
-        Hi, I'm back.  #line:0ce20ee 
-        Oh, I see he looks very happy. By the way, his name is Johnny. Thank you so much for being nice to him. #line:070050f 
+        Oh, I see he looks very happy. By the way, his name is Johnny. Thank you so much for being nice to him. #line:OwnerIntroductionGrateful 
         <<DogRunFree YarnCommands>>
+        <<ShopEnable YarnCommands>>
     <<endif>>
 <<elseif $sad == true>>
-    Hi, I'm back.  #line:0dba28d 
-    My dog looks a little bit upset. Sorry if he was bothering you. #line:09c894b 
-    Anyways, thanks for taking care of him. #line:0099bf2 
+    My dog looks a little bit upset. Sorry if he was bothering you. #line:OwnerApology 
+    Anyways, thanks for taking care of him. #line:OwnerAnyways 
     <<DogRunFree YarnCommands>>
+    <<ShopEnable YarnCommands>>
 <<else>>
 Hi, could I ask for your help?  #line:Hello 
-Could you watch over my dog for a moment? I need to go somewhere, I will be back very soon. #line:019012b 
+Could you watch over my dog for a moment? I need to go make an important call, I will be back very soon. #line:OwnerRequest 
 -> Sure, what's his name? #line:0dbd65b 
     <<set $knowsNameOfDog = true>>
-    He's called Johnny. You can throw him the yellow ball if you would like to play with him. #line:0358b6f 
+    He's called Johnny. You can throw him the yellow ball if you would like to play with him. #line:OwnerPresentation 
     <<PhoneCallTime YarnCommands>>
 -> I'm scared of dogs. #line:0140f2e 
-    Don't worry, he is very friendly and does not bite. Throw him the yellow ball to keep him occupied. #line:00b2c46 
+    Don't worry, he is very friendly and does not bite. Throw him the yellow ball to keep him occupied. #line:OwnerReassurance 
     <<PhoneCallTime YarnCommands>>
-
 <<endif>>
 ===
 
@@ -41,9 +41,9 @@ tags:
 position: 160,-180
 ---
 <<StopDogMovement YarnCommands>>
-Hey. Don't bother looking for that ball. I just ate it. I'm hungry. #line:0367cec 
+Hey. Don't bother looking for that ball. I just ate it. I'm hungry. #line:DogHey
 -> What? You can talk? #line:05e3d90 
-    Or maybe you are just going crazy. Either way, go buy me something to eat. #line:01c321c 
+    Or maybe you are just going crazy. Either way, go buy me something to eat. #line:DogReply
 -> Okay, what do you want to eat?  #line:033e35c 
 
 <<jump Dog2>>
@@ -55,7 +55,7 @@ tags:
 position: -154,101
 ---
 
-I would like to have a bone. Yes, buy me a bone. #line:03acedd 
+I would like to have a bone. Yes, buy me a bone. #line:DogRequest
 <<ResumeDogMovement YarnCommands>>
 <<ShopEnable YarnCommands>>
 ===
